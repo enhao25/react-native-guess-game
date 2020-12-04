@@ -44,7 +44,7 @@ const StartGameScreen = props => {
     if (confirmed) {
         confirmedOutput = 
             <Card style={styles.summaryContainer}>
-                <Text style={{fontWeight: 'bold'}}>You selected</Text>
+                <BodyText>You selected</BodyText>
                 <NumberContainer>{selectedNumber}</NumberContainer>
                 <Button title="START GAME" onPress={() => props.onStartGame(selectedNumber)} />
             </Card>
@@ -92,7 +92,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 20,
-        marginVertical: 10
+        marginVertical: 10,
+        fontFamily: 'open-sans-bold'
     },
     button: {
         width: 100
