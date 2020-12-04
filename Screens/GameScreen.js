@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { StyleSheet, View, Text, Button, Alert } from 'react-native';
 import Card from '../Components/Card';
+import MainButton from '../Components/MainButton';
 import NumberContainer from '../Components/NumberContainer';
+
+import { Ionicons } from '@expo/vector-icons';
 
 // Generate a random number between min and max and the random number cannot be the excluded number
 const generateRandomBetween = (min, max, exclude) => {
@@ -55,8 +58,12 @@ const GameScreen = props => {
             <Text>Opponent's Guess</Text>
             <NumberContainer>{currentGuess}</NumberContainer>
             <Card style={styles.buttonContainer}>
-                <Button title="LOWER" onPress={() => nextGameHandler("LOWER")} />
-                <Button title="GREATER" onPress={() => nextGameHandler("GREATER")} />
+                <MainButton onPress={() => nextGameHandler("LOWER")}>
+                    <Ionicons name="md-remove" size={24} color="white"/>
+                </MainButton>
+                <MainButton onPress={() => nextGameHandler("GREATER")}>
+                    <Ionicons name="md-add" size={24} color="white"/>        
+                </MainButton>
             </Card>
         </View>
     );

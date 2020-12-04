@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
+import BodyText from '../Components/BodyText';
 import Card from '../Components/Card';
 import Input from '../Components/Input';
+import MainButton from '../Components/MainButton';
 import NumberContainer from '../Components/NumberContainer';
 import Colors from '../Constants/Colors';
 
@@ -46,7 +48,7 @@ const StartGameScreen = props => {
             <Card style={styles.summaryContainer}>
                 <BodyText>You selected</BodyText>
                 <NumberContainer>{selectedNumber}</NumberContainer>
-                <Button title="START GAME" onPress={() => props.onStartGame(selectedNumber)} />
+                <MainButton onPress={() => props.onStartGame(selectedNumber)}>START GAME</MainButton>
             </Card>
     }
 
@@ -96,7 +98,7 @@ const styles = StyleSheet.create({
         fontFamily: 'open-sans-bold'
     },
     button: {
-        width: 100
+        width: 100,
     },
     input: {
         width: 80,
